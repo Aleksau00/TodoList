@@ -12,7 +12,7 @@ using NovaLite.Todo.Api.Data;
 namespace NovaLite.Todo.Api.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240117232519_Initial")]
+    [Migration("20240118081054_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
