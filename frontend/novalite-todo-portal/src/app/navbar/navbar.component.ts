@@ -17,7 +17,15 @@ export class NavbarComponent {
   }
 
   routeToOverview() : void {
-    this.router.navigate(['']);
+    this.router.navigate(['/lists']);
+  }
+
+  routeToNew() : void {
+    this.router.navigate(['/lists/new'])
+  }
+
+  routeToHome() : void {
+    this.router.navigate([''])
   }
 
 

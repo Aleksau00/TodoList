@@ -1,9 +1,9 @@
-<body>
+<body style="height: 12vh">
 <header>
-  <h2 class="logo" (click)="routeToOverview()">Todo</h2>
+  <h2 class="logo" (click)="routeToHome()">Todo</h2>
   <nav class="navigation">
-    <a href = "">Overview</a>
-    <a href="/details">New Book</a>
+    <a (click)="routeToOverview()">Overview</a>
+    <a (click)="routeToNew()">New Book</a>
   </nav>
 </header>
 </body>

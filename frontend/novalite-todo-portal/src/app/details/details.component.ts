@@ -8,24 +8,24 @@ import {FormsModule} from "@angular/forms";
 import {NgModel} from "@angular/forms";
 import {MatCard, MatCardContent, MatCardHeader} from "@angular/material/card";
 import {MatInput} from "@angular/material/input";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {CommonModule} from "@angular/common";
+import {MatButton} from "@angular/material/button";
 
 @Component({
   selector: 'app-details',
   standalone: true,
   imports: [
-    MatFormField,
-    ReactiveFormsModule,
     FormsModule,
+    CommonModule,
+    MatFormField,
     MatCardHeader,
     MatCardContent,
     MatCard,
     MatInput,
     MatLabel,
     CommonModule,
+    MatButton
   ],
-  providers: [NgModel],
   templateUrl: './details.component.html',
   styleUrl: './details.component.css'
 })
@@ -51,6 +51,7 @@ export class DetailsComponent {
   }
 
   saveChanges(todoListModel: any) : void {
+    console.log(todoListModel)
     this.todoListService.updateList(todoListModel).subscribe( res => {
       console.log(res);
     })

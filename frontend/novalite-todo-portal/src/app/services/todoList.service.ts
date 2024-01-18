@@ -22,7 +22,7 @@ export class TodoListService {
   }
 
   updateList(todoListModel : any) : Observable<any> {
-    return this.http.put<any>(this.baseUrl + '/update', todoListModel, {headers: this.headers})
+    return this.http.put<any>(this.baseUrl, todoListModel, {headers: this.headers})
   }
 
 }

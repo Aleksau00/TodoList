@@ -1,15 +1,22 @@
-<div class="center-div">
+<div class="wrapper">
+  <h1>TO DO</h1>
   <div class="container">
-    <form>
-      <mat-form-field>
-        <label for="title">Title</label>
-        <input matInput placeholder="Enter text" ngModel="{{todoListModel.title}}" name="title" id="title">
-      </mat-form-field>
 
-      <mat-form-field>
-        <label for="description">Description</label>
-        <textarea matInput placeholder="Enter description" ngModel="{{todoListModel.description}}" name="description" id="description" rows="5"></textarea>
+    <form>
+      <mat-form-field class="mat-form-field">
+        <label for="title"></label>
+        <input matInput placeholder="Enter text" [(ngModel)]="todoListModel.title" name="title" id="title">
       </mat-form-field>
     </form>
+    <form>
+      <mat-form-field class="mat-form-field">
+        <label for="description">Description</label>
+        <textarea matInput placeholder="Enter description" [(ngModel)]="todoListModel.description" name="description" id="description" rows="5"></textarea>
+      </mat-form-field>
+    </form>
+    <div class="button-row">
+      <button mat-raised-button (click)="saveChanges(todoListModel)" color="primary">Save changes</button>
+    </div>
+
   </div>
 </div>

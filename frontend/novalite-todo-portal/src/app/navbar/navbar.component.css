@@ -15,6 +15,7 @@ header {
   font-size: 2em;
   color: white;
   user-select: none;
+  cursor: pointer;
 }
 
 .navigation a {
@@ -24,6 +25,8 @@ header {
   text-decoration: none;
   font-weight: 500;
   margin-right: 40px;
+  user-select: none;
+  cursor: pointer;
 }
 
 .navigation a::after {
