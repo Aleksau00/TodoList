@@ -8,7 +8,7 @@ import {TodoListModel} from "../model/todoList.model";
   providedIn: 'root'
 })
 export class TodoListService {
-  private baseUrl = 'https://localhost:7232/api/TodoList';
+  private baseUrl = 'http://localhost:7232/api/lists';
   headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
 
   constructor(private http: HttpClient) { }
@@ -17,5 +17,12 @@ export class TodoListService {
     return this.http.get<TodoListModel[]>(this.baseUrl, {headers: this.headers});
   }
 
+  getList(id : any): Observable<TodoListModel> {
+    return this.http.get<TodoListModel>(this.baseUrl+"/"+id, {headers: this.headers});
+  }
+
+  updateList(todoListModel : any) : Observable<any> {
+    return this.http.put<any>(this.baseUrl + '/update', todoListModel, {headers: this.headers})
+  }
 
 }

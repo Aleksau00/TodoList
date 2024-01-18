@@ -9,7 +9,7 @@ using NovaLite.Todo.Api.Services;
 namespace NovaLite.Todo.Api.Controller
 {
     [ApiController]
-    [Route("api/[Controller]")]
+    [Route("api/lists")]
     
     public class TodoListController : ControllerBase
     {

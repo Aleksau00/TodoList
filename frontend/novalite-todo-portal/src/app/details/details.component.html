@@ -1,1 +1,15 @@
-<p>details works!</p>
+<div class="center-div">
+  <div class="container">
+    <form>
+      <mat-form-field>
+        <label for="title">Title</label>
+        <input matInput placeholder="Enter text" ngModel="{{todoListModel.title}}" name="title" id="title">
+      </mat-form-field>
+
+      <mat-form-field>
+        <label for="description">Description</label>
+        <textarea matInput placeholder="Enter description" ngModel="{{todoListModel.description}}" name="description" id="description" rows="5"></textarea>
+      </mat-form-field>
+    </form>
+  </div>
+</div>

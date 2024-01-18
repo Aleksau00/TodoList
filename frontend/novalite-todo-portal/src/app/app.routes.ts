@@ -4,9 +4,9 @@ import {DetailsComponent} from "./details/details.component";
 import {NewComponent} from "./new/new.component";
 
 export const routes: Routes = [
-  { path: '', component: OverviewComponent},
-  { path: 'details', component: DetailsComponent},
-  { path: 'new', component: NewComponent}
+  { path: 'lists', component: OverviewComponent},
+  { path: 'lists/:id', component: DetailsComponent},
+  { path: 'lists/new', component: NewComponent}
 ];
 
 
