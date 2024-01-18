@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import {TodoListModel} from "../model/todoList.model";
 import {Observable} from "rxjs";
 import {TodoListService} from "../services/todoList.service";
-import {CommonModule} from "@angular/common";
+import {CommonModule, NgForOf} from "@angular/common";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 @Component({
   selector: 'app-overview',
   standalone: true,
-  imports: [HttpClientModule],
+  imports: [HttpClientModule, NgForOf],
   providers: [TodoListService],
   templateUrl: './overview.component.html',
   styleUrl: './overview.component.css'
@@ -21,9 +21,7 @@ export class OverviewComponent {
   }
 
   ngOnInit() : void {
-    this.getAll();
     console.log(this.getAll());
-    console.log("ma");
   }
 
   getAll() : void {
