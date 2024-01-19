@@ -14,11 +14,12 @@ import {
 } from "@angular/material/card";
 import {MatPaginator} from "@angular/material/paginator";
 import {Router} from "@angular/router";
+import {MatButton} from "@angular/material/button";
 
 @Component({
   selector: 'app-overview',
   standalone: true,
-  imports: [HttpClientModule, NgForOf, MatCard, MatCardHeader, MatCardContent, MatCardActions, MatPaginator, MatCardTitle, MatCardFooter],
+  imports: [HttpClientModule, NgForOf, MatCard, MatCardHeader, MatCardContent, MatCardActions, MatPaginator, MatCardTitle, MatCardFooter, MatButton],
   providers: [TodoListService],
   templateUrl: './overview.component.html',
   styleUrl: './overview.component.css'

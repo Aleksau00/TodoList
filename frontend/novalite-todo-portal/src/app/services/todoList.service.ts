@@ -25,4 +25,8 @@ export class TodoListService {
     return this.http.put<any>(this.baseUrl, todoListModel, {headers: this.headers})
   }
 
+  createList(todoList : any) : Observable<any> {
+    return this.http.post<any>(this.baseUrl, todoList, {headers: this.headers})
+  }
+
 }

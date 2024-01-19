@@ -6,6 +6,7 @@
 }
 
 .cards {
+  margin-top: 50px;
   margin-left: 50px;
   margin-right: 50px;
   display: flex;
@@ -80,24 +81,4 @@
   transform: translateX(-50%);
 }
 
-.button-container {
-  position: absolute;
-  bottom: 16px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-}
 
-.details-button {
-  background-color: #2196F3; /* Blue color, you can change it to your preferred color */
-  color: white;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.details-button:hover {
-  background-color: #0b7dda; /* Darker shade on hover, adjust as needed */
-}

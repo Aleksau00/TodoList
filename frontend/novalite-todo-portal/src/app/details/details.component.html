@@ -1,21 +1,21 @@
 <div class="wrapper">
-  <h1>TO DO</h1>
+  <h1 style="color: #5465ff; font-size: 50px;">Details</h1>
   <div class="container">
-
     <form>
       <mat-form-field class="mat-form-field">
-        <label for="title"></label>
+        <label style="color:#788bff" for="title">Title</label>
         <input matInput placeholder="Enter text" [(ngModel)]="todoListModel.title" name="title" id="title">
       </mat-form-field>
     </form>
     <form>
       <mat-form-field class="mat-form-field">
-        <label for="description">Description</label>
-        <textarea matInput placeholder="Enter description" [(ngModel)]="todoListModel.description" name="description" id="description" rows="5"></textarea>
+        <label style="color:#788bff" for="description">Description</label>
+        <textarea matInput class="textarea" placeholder="Enter description" [(ngModel)]="todoListModel.description" name="description" id="description" rows="10"></textarea>
       </mat-form-field>
     </form>
     <div class="button-row">
-      <button mat-raised-button (click)="saveChanges(todoListModel)" color="primary">Save changes</button>
+      <button mat-raised-button (click)="goToOverview()" style="color: white; background-color: darkred">Cancel</button>
+      <button mat-raised-button (click)="saveChanges(todoListModel)" style="color: white; background-color: #5465ff">Save changes</button>
     </div>
 
   </div>

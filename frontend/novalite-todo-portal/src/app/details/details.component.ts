@@ -1,5 +1,5 @@
 import {Component, NgModule, OnInit} from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {MatFormField, MatLabel} from "@angular/material/form-field";
 import {TodoListModel} from "../model/todoList.model";
 import {TodoListService} from "../services/todoList.service";
@@ -33,7 +33,7 @@ export class DetailsComponent {
 
 
   todoListModel : TodoListModel = new TodoListModel();
-  constructor(private route: ActivatedRoute, private todoListService: TodoListService) {
+  constructor(private route: ActivatedRoute, private todoListService: TodoListService, private router: Router) {
   }
 
   ngOnInit() : void {
@@ -56,5 +56,9 @@ export class DetailsComponent {
       console.log(res);
     })
 
+  }
+
+  goToOverview() {
+    this.router.navigate(['/lists'])
   }
 }

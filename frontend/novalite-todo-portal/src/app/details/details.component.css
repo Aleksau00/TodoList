@@ -6,6 +6,10 @@
   height: 100vh;
 }
 
+.textarea {
+  resize: none;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -13,7 +17,7 @@
   justify-content: center;
   width: 800px;
   height: 600px;
-  border: 2px solid rebeccapurple;
+  border: 2px solid #5465ff;
 }
 
 .mat-form-field {
@@ -24,6 +28,6 @@
   display:flex;
   width: 500px;
   flex-direction: row;
-  align-items: end;
-  justify-content: right;
+  align-items: center;
+  justify-content: space-between;
 }
