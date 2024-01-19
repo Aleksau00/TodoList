@@ -8,9 +8,11 @@ namespace NovaLite.Todo.Api.Data
     {
         private readonly ApplicationDbContext _context;
         private TodoListRepository _todoListRepository;
+        private TodoItemRepository _todoItemRepository;
         private bool _disposed;
 
         public ITodoListRepository TodoListRepository => _todoListRepository ??= new TodoListRepository(_context);
+        public ITodoItemRepository TodoItemRepository => _todoItemRepository ??= new TodoItemRepository(_context);
 
         public UnitOfWork(ApplicationDbContext context)
         {

@@ -10,5 +10,6 @@ namespace NovaLite.Todo.Api.Model
 
         [StringLength(255, ErrorMessage = "Description cannot exceed 255 characters.")]
         public string Description { get; set; } = string.Empty;
+        
     }
 }

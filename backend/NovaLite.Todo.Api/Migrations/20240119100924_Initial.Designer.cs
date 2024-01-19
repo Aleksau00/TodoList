@@ -12,7 +12,7 @@ using NovaLite.Todo.Api.Data;
 namespace NovaLite.Todo.Api.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240118081054_Initial")]
+    [Migration("20240119100924_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -24,6 +24,29 @@ namespace NovaLite.Todo.Api.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("NovaLite.Todo.Api.Model.TodoItem", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("TodoListId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TodoListId");
+
+                    b.ToTable("TodoItems");
+                });
 
             modelBuilder.Entity("NovaLite.Todo.Api.Model.TodoList", b =>
                 {
@@ -44,6 +67,17 @@ namespace NovaLite.Todo.Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("TodoLists");
+                });
+
+            modelBuilder.Entity("NovaLite.Todo.Api.Model.TodoItem", b =>
+                {
+                    b.HasOne("NovaLite.Todo.Api.Model.TodoList", "TodoList")
+                        .WithMany()
+                        .HasForeignKey("TodoListId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TodoList");
                 });
 #pragma warning restore 612, 618
         }

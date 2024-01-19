@@ -10,6 +10,9 @@ namespace NovaLite.Todo.Api.Mapper
         {
             CreateMap<TodoListDTO, TodoList>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => Guid.NewGuid()));
+            CreateMap<TodoItemDTO, TodoItem>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => Guid.NewGuid()));
+            CreateMap<EditTodoItemDTO, TodoItem>();
         }
     }
 }
