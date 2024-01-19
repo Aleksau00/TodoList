@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "6fs2DPVZ3tKuwAq8O+cb8JQwmnPdkcIaSBZRYaMFH4Y=",
+  "Source": "NovaLite.Todo.Api",
+  "BasePath": "_content/NovaLite.Todo.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
