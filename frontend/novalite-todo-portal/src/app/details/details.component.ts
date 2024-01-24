@@ -9,7 +9,11 @@ import {NgModel} from "@angular/forms";
 import {MatCard, MatCardContent, MatCardHeader} from "@angular/material/card";
 import {MatInput} from "@angular/material/input";
 import {CommonModule} from "@angular/common";
-import {MatButton} from "@angular/material/button";
+import {MatButton, MatMiniFabButton} from "@angular/material/button";
+import {TodoListAndItemsDTOModel} from "../model/todoListAndItemsDTO.model";
+import {MatDivider} from "@angular/material/divider";
+import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
+import {EditItemComponent} from "../edit-item/edit-item.component";
 
 @Component({
   selector: 'app-details',
@@ -24,7 +28,9 @@ import {MatButton} from "@angular/material/button";
     MatInput,
     MatLabel,
     CommonModule,
-    MatButton
+    MatButton,
+    MatDivider,
+    MatMiniFabButton
   ],
   templateUrl: './details.component.html',
   styleUrl: './details.component.css'
@@ -32,30 +38,39 @@ import {MatButton} from "@angular/material/button";
 export class DetailsComponent {
 
 
-  todoListModel : TodoListModel = new TodoListModel();
-  constructor(private route: ActivatedRoute, private todoListService: TodoListService, private router: Router) {
+  todoListModel : TodoListAndItemsDTOModel = new TodoListAndItemsDTOModel();
+  constructor(private dialog: MatDialog,private route: ActivatedRoute, private todoListService: TodoListService, private router: Router) {
   }
 
   ngOnInit() : void {
     const id = this.route.snapshot.paramMap.get('id');
     this.getList(id)
-    console.log(this.todoListModel)
   }
 
   getList(id : any) : void {
     this.todoListService.getList(id).subscribe(res => {
       this.todoListModel = res;
-      console.log(res);
-      console.log(this.todoListModel)
+      console.log(res)
     });
   }
 
   saveChanges(todoListModel: any) : void {
-    console.log(todoListModel)
     this.todoListService.updateList(todoListModel).subscribe( res => {
-      console.log(res);
     })
 
+  }
+
+  editItem(item: any, listId: string) : void{
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data =  {item : item, listId : listId};
+    dialogConfig.height = '300px';
+    const dialogRef = this.dialog.open(EditItemComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+      this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+      this.router.onSameUrlNavigation = 'reload';
+      this.router.navigate([this.router.url]);
+    });
   }
 
   goToOverview() {

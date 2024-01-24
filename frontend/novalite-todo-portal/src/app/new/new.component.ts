@@ -42,9 +42,7 @@ export class NewComponent {
   }
 
   saveChanges(todoListModel: any) : void {
-    console.log(todoListModel)
     this.todoListService.createList(todoListModel).subscribe( res => {
-      console.log(res);
       this.router.navigate(['/lists'])
     })
 

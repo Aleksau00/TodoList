@@ -51,6 +51,8 @@ namespace NovaLite.Todo.Api.Services
         public async Task<bool> Update(EditTodoItemDTO todoItemDTO)
         {
             var todoItem = await _unitOfWork.TodoItemRepository.GetByIdAsync(todoItemDTO.Id);
+            todoItem.Status = todoItemDTO.Status;
+            todoItem.Content = todoItemDTO.Content;
             await _unitOfWork.TodoItemRepository.UpdateAsync(todoItem);
             await _unitOfWork.CompleteAsync();
             return true;

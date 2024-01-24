@@ -1,4 +1,4 @@
-﻿namespace NovaLite.Todo.Api.Enums
+﻿namespace NovaLite.Todo.Api.Model
 {
     public enum Status
     {

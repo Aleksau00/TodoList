@@ -1,6 +1,4 @@
-﻿using NovaLite.Todo.Api.Enums;
-
-namespace NovaLite.Todo.Api.Model
+﻿namespace NovaLite.Todo.Api.Model
 {
     public class TodoItem
     {

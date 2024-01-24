@@ -10,24 +10,48 @@
   resize: none;
 }
 
-.container {
+.left {
+  display: flex;
+  flex-direction:column;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+.right {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  width: 800px;
-  height: 600px;
-  border: 2px solid #5465ff;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  overflow-y: auto; /* Add this line to enable vertical scrolling */
+  border: 1px solid #ccc; /* Optional: Add a border for visual clarity */
+}
+
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 1080px;
+  height: 600px ;
+  border: 1px solid #5465ff;
 }
 
 .mat-form-field {
-  width: 500px;
+  margin-top: 20px;
+  width: 350px;
 }
+
 
 .button-row {
   display:flex;
-  width: 500px;
+  margin-bottom: 20px;
+  width: 1080px;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
+

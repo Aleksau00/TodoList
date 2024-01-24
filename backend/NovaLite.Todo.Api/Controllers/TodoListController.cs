@@ -75,7 +75,7 @@ namespace NovaLite.Todo.Api.Controller
         {
 
             var result = await _todoItemService.Update(todoItemDTO);
-            return result == false ? NotFound() : NoContent();
+            return result == false ? NotFound() : Ok();
         }
 
         [HttpPut]

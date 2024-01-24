@@ -15,6 +15,8 @@ namespace NovaLite.Todo.Api.Services
         public async Task<TodoList> Create(TodoList todoList)
         {
             var newList = await _unitOfWork.TodoListRepository.CreateAsync(todoList);
+
+
             await _unitOfWork.CompleteAsync();
             return newList;
         }

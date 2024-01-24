@@ -1,0 +1,28 @@
+
+  <div class="wrapper" mat-dialog-content>
+    <div class="text-area">
+      <mat-form-field color="primary" id="itemArea" appearance="fill">
+        <mat-label>Content</mat-label>
+        <input matInput placeholder="Enter text" [(ngModel)]="item.content" name="contentBox" id="contentBox">
+      </mat-form-field>
+    </div>
+    <div class="status-area">
+      <section>
+        <mat-button-toggle-group [(ngModel)]="item.status" >
+          <mat-button-toggle checked value=0>Open</mat-button-toggle>
+          <mat-button-toggle value=1>Active</mat-button-toggle>
+          <mat-button-toggle value=2>Closed</mat-button-toggle>
+        </mat-button-toggle-group>
+        <p>value: {{item.status}}</p>
+      </section>
+    </div>
+    <div class="button-area">
+      <div mat-dialog-action [align]="'end'">
+        <button class="dialogButtonCancel" mat-raised-button (click)="onCancel()" color="warn" mat-dialog-close>Cancel</button>
+        <button id="submitFeedback" class="dialogButton" mat-raised-button mat-dialog-close (click)="onSave()">Save</button>
+    </div>
+
+
+
+  </div>
+

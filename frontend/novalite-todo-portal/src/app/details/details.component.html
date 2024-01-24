@@ -1,22 +1,35 @@
 <div class="wrapper">
   <h1 style="color: #5465ff; font-size: 50px;">Details</h1>
+  <hr style="width:100%;text-align:left;margin: 20px 20px 20px 20px;">
   <div class="container">
-    <form>
-      <mat-form-field class="mat-form-field">
-        <label style="color:#788bff" for="title">Title</label>
-        <input matInput placeholder="Enter text" [(ngModel)]="todoListModel.title" name="title" id="title">
-      </mat-form-field>
-    </form>
-    <form>
-      <mat-form-field class="mat-form-field">
-        <label style="color:#788bff" for="description">Description</label>
-        <textarea matInput class="textarea" placeholder="Enter description" [(ngModel)]="todoListModel.description" name="description" id="description" rows="10"></textarea>
-      </mat-form-field>
-    </form>
-    <div class="button-row">
-      <button mat-raised-button (click)="goToOverview()" style="color: white; background-color: darkred">Cancel</button>
-      <button mat-raised-button (click)="saveChanges(todoListModel)" style="color: white; background-color: #5465ff">Save changes</button>
+    <div class="left">
+      <form>
+        <mat-form-field class="mat-form-field">
+          <label style="color:#788bff" for="title">Title</label>
+          <input matInput placeholder="Enter text" [(ngModel)]="todoListModel.todoList.title" name="title" id="title">
+        </mat-form-field>
+      </form>
+      <form>
+        <mat-form-field class="mat-form-field">
+          <label style="color:#788bff" for="description">Description</label>
+          <textarea matInput class="textarea" placeholder="Enter description" [(ngModel)]="todoListModel.todoList.description" name="description" id="description" rows="10"></textarea>
+        </mat-form-field>
+      </form>
+      <div style="margin: 30px;">
+        <button mat-raised-button (click)="goToOverview()" style="color: white; background-color: darkred; margin-right:140px;">Cancel</button>
+        <button mat-raised-button (click)="saveChanges(todoListModel.todoList)" style="color: white; background-color: #5465ff">Save changes</button>
+      </div>
+    </div>
+    <div class="right">
+      <div *ngFor="let item of todoListModel.todoItems">
+        <mat-form-field class="mat-form-field">
+          <input matInput placeholder="Enter text" [(ngModel)]="item.content" name="content" id="content">
+        </mat-form-field>
+        <button mat-mini-fab (click)="editItem(item, todoListModel.todoList.id)">Edit</button>
+      </div>
     </div>
 
   </div>
+
+
 </div>

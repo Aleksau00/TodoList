@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
-using NovaLite.Todo.Api.Enums;
 using NovaLite.Todo.Api.Model;
 
 namespace NovaLite.Todo.Api.DTOs
