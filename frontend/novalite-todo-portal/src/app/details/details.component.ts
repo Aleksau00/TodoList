@@ -39,6 +39,7 @@ export class DetailsComponent {
 
 
   todoListModel : TodoListAndItemsDTOModel = new TodoListAndItemsDTOModel();
+  newContent: string = "";
   constructor(private dialog: MatDialog,private route: ActivatedRoute, private todoListService: TodoListService, private router: Router) {
   }
 
@@ -58,6 +59,16 @@ export class DetailsComponent {
     this.todoListService.updateList(todoListModel).subscribe( res => {
     })
 
+  }
+
+  createItem() : void {
+    try {
+      this.todoListService.createItem(this.newContent, this.todoListModel.todoList.id).subscribe(res => {
+        alert("Success")
+      });
+    } catch(error) {
+      alert(error)
+    }
   }
 
   editItem(item: any, listId: string) : void{

@@ -31,6 +31,16 @@ export class TodoListService {
     return this.http.post<any>(this.baseUrl, todoList, {headers: this.headers})
   }
 
+  createItem(todoItem: any, todoListId: string) : Observable<any> {
+    const todoItemDTO = {
+      content: todoItem,
+      todoListId: todoListId,
+      status: 0
+    }
+    console.log(todoItemDTO)
+    return this.http.post<any>(this.baseUrl+"/item", todoItemDTO, {headers: this.headers})
+  }
+
   editItem(todoItem : TodoItemModel) : Observable<any> {
     const todoItemDTO = {
       id: todoItem.id,

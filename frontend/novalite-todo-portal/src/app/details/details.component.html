@@ -21,11 +21,18 @@
       </div>
     </div>
     <div class="right">
+      <div style="margin-top: 100px">
+        <mat-form-field class="mat-form-field">
+          <label style="color:#788bff" for="title">Add new item</label>
+          <input matInput placeholder="Enter text"  [(ngModel)]="newContent" name="newContent" id="newContent">
+        </mat-form-field>
+        <button class="minifab" color="primary" mat-mini-fab (click)="createItem()">Add</button>
+      </div>
       <div *ngFor="let item of todoListModel.todoItems">
         <mat-form-field class="mat-form-field">
           <input matInput placeholder="Enter text" [(ngModel)]="item.content" name="content" id="content">
         </mat-form-field>
-        <button mat-mini-fab (click)="editItem(item, todoListModel.todoList.id)">Edit</button>
+        <button class="minifab" mat-mini-fab (click)="editItem(item, todoListModel.todoList.id)">Edit</button>
       </div>
     </div>
 
