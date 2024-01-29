@@ -1,8 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using NovaLite.Todo.Api.Controller;
-using NovaLite.Todo.Api.Data;
-using NovaLite.Todo.Api.Repos.TodoListRepo;
-using NovaLite.Todo.Api.Services;
+using NovaLite.Todo.Shared.Data;
+using Novalite.Todo.Shared.Repos.TodoListRepo;
+using NovaLite.Todo.Shared.Repos.TodoListRepo;
+using NovaLite.Todo.Shared.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +22,7 @@ builder.Services.AddScoped<ITodoListRepository, TodoListRepository>();
 builder.Services.AddScoped<ITodoListService, TodoListService>();
 builder.Services.AddScoped<ITodoItemRepository, TodoItemRepository>();
 builder.Services.AddScoped<ITodoItemService, TodoItemService>();
+builder.Services.AddScoped<ITodoReminderRepository, TodoReminderRepository>();
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
 builder.Services.AddCors(options =>

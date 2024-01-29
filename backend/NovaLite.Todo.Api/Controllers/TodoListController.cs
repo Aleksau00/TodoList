@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using NovaLite.Todo.Api.DTOs;
+using NovaLite.Todo.Shared.DTOs;
 using NovaLite.Todo.Api.Mapper;
-using NovaLite.Todo.Api.Model;
-using NovaLite.Todo.Api.Services;
+using NovaLite.Todo.Shared.Model;
+using NovaLite.Todo.Shared.Services;
 
 namespace NovaLite.Todo.Api.Controller
 {
@@ -40,6 +40,8 @@ namespace NovaLite.Todo.Api.Controller
         }
 
         [HttpPost("item")]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<TodoList>> CreateTodoItem([FromBody] TodoItemDTO todoItemDTO)
         {
             var todoitem = _mapper.Map<TodoItem>(todoItemDTO);

@@ -11,6 +11,7 @@ import {TodoItemModel} from "../model/todoItem.model";
 })
 export class TodoListService {
   private baseUrl = 'http://localhost:7232/api/lists';
+  private reminderUrl = 'http://localhost:7232/api/reminders'
   headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
 
   constructor(private http: HttpClient) { }
@@ -39,6 +40,13 @@ export class TodoListService {
     }
     console.log(todoItemDTO)
     return this.http.post<any>(this.baseUrl+"/item", todoItemDTO, {headers: this.headers})
+  }
+
+  createReminder(id: string) : Observable<any> {
+    const todoRequestModel = {
+      todoListId: id
+    }
+    return this.http.post<any>(this.reminderUrl, todoRequestModel, {headers: this.headers})
   }
 
   editItem(todoItem : TodoItemModel) : Observable<any> {

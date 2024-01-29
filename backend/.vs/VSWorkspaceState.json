@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\NovaLite.Todo.Api",
+    "\\NovaLite.Todo.Api\\Properties",
+    "\\NovaLite.Todo.Shared",
+    "\\NovaLite.Todo.Shared\\bin",
+    "\\NovaLite.Todo.Shared\\Data",
+    "\\NovaLite.Todo.Shared\\DTOs",
+    "\\NovaLite.Todo.Shared\\Model",
+    "\\NovaLite.Todo.Shared\\Repos",
+    "\\NovaLite.Todo.Shared\\Repos\\TodoListRepo"
+  ],
+  "SelectedNode": "\\NovaLite.Todo.Shared\\obj",
+  "PreviewInSolutionExplorer": false
+}

@@ -14,6 +14,7 @@ import {TodoListAndItemsDTOModel} from "../model/todoListAndItemsDTO.model";
 import {MatDivider} from "@angular/material/divider";
 import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
 import {EditItemComponent} from "../edit-item/edit-item.component";
+import {MatIconModule} from "@angular/material/icon";
 
 @Component({
   selector: 'app-details',
@@ -30,7 +31,8 @@ import {EditItemComponent} from "../edit-item/edit-item.component";
     CommonModule,
     MatButton,
     MatDivider,
-    MatMiniFabButton
+    MatMiniFabButton,
+    MatIconModule
   ],
   templateUrl: './details.component.html',
   styleUrl: './details.component.css'
@@ -68,6 +70,16 @@ export class DetailsComponent {
       });
     } catch(error) {
       alert(error)
+    }
+  }
+
+  createReminder() : void {
+    try {
+      this.todoListService.createReminder(this.todoListModel.todoList.id).subscribe(( res=> {
+        alert("Successfully created reminder")
+      }))
+    } catch (error) {
+      alert("Already set an alarm today");
     }
   }
 

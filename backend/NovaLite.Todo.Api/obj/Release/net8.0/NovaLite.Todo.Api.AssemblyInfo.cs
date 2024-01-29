@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NovaLite.Todo.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+850c9e505cb136904641a763654e6acc39751184")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+652986a6848228af674a3690b724bf161ca441ac")]
 [assembly: System.Reflection.AssemblyProductAttribute("NovaLite.Todo.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NovaLite.Todo.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

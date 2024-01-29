@@ -1,0 +1,14 @@
+C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\Novalite.Todo.Shared\bin\Debug\net8.0\Novalite.Todo.Shared.deps.json
+C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\Novalite.Todo.Shared\bin\Debug\net8.0\Novalite.Todo.Shared.runtimeconfig.json
+C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\Novalite.Todo.Shared\bin\Debug\net8.0\Novalite.Todo.Shared.dll
+C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\Novalite.Todo.Shared\bin\Debug\net8.0\Novalite.Todo.Shared.pdb
+C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\Novalite.Todo.Shared\obj\Debug\net8.0\Novalite.Todo.Shared.csproj.AssemblyReference.cache
+C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\Novalite.Todo.Shared\obj\Debug\net8.0\Novalite.Todo.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\Novalite.Todo.Shared\obj\Debug\net8.0\Novalite.Todo.Shared.AssemblyInfoInputs.cache
+C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\Novalite.Todo.Shared\obj\Debug\net8.0\Novalite.Todo.Shared.AssemblyInfo.cs
+C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\Novalite.Todo.Shared\obj\Debug\net8.0\Novalite.Todo.Shared.csproj.CoreCompileInputs.cache
+C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\Novalite.Todo.Shared\obj\Debug\net8.0\Novalite.Todo.Shared.dll
+C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\Novalite.Todo.Shared\obj\Debug\net8.0\refint\Novalite.Todo.Shared.dll
+C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\Novalite.Todo.Shared\obj\Debug\net8.0\Novalite.Todo.Shared.pdb
+C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\Novalite.Todo.Shared\obj\Debug\net8.0\Novalite.Todo.Shared.genruntimeconfig.cache
+C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\Novalite.Todo.Shared\obj\Debug\net8.0\ref\Novalite.Todo.Shared.dll
