@@ -22,6 +22,27 @@ namespace Novalite.Todo.Shared.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("NovaLite.Todo.Shared.Model.TodoAttachment", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("FileName")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<Guid>("TodoListId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TodoListId");
+
+                    b.ToTable("TodoAttachments");
+                });
+
             modelBuilder.Entity("NovaLite.Todo.Shared.Model.TodoItem", b =>
                 {
                     b.Property<Guid>("Id")
@@ -88,6 +109,17 @@ namespace Novalite.Todo.Shared.Migrations
                     b.ToTable("TodoReminders");
                 });
 
+            modelBuilder.Entity("NovaLite.Todo.Shared.Model.TodoAttachment", b =>
+                {
+                    b.HasOne("NovaLite.Todo.Shared.Model.TodoList", "TodoList")
+                        .WithMany("Attachments")
+                        .HasForeignKey("TodoListId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TodoList");
+                });
+
             modelBuilder.Entity("NovaLite.Todo.Shared.Model.TodoItem", b =>
                 {
                     b.HasOne("NovaLite.Todo.Shared.Model.TodoList", "TodoList")
@@ -112,6 +144,8 @@ namespace Novalite.Todo.Shared.Migrations
 
             modelBuilder.Entity("NovaLite.Todo.Shared.Model.TodoList", b =>
                 {
+                    b.Navigation("Attachments");
+
                     b.Navigation("Reminders");
                 });
 #pragma warning restore 612, 618

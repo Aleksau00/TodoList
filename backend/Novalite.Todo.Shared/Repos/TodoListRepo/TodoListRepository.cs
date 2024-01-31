@@ -15,8 +15,21 @@ namespace NovaLite.Todo.Shared.Repos.TodoListRepo
         public async Task<TodoList> GetByIdWithRemindersAsync(Guid givenId)
         {
             return await DbSet
-                .Include(todoList => todoList.Reminders)
-                .FirstOrDefaultAsync(todoList => todoList.Id == givenId);
+                    .Include(todoList => todoList.Reminders)
+                    .Select(todoList => new TodoList
+                    {
+                        Id = todoList.Id,
+                        Title = todoList.Title,
+                        Description = todoList.Description,
+                        Reminders = todoList.Reminders.Select(reminder => new TodoReminder
+                        {
+                            Id = reminder.Id,
+                            Timestamp = reminder.Timestamp,
+                            Sent = reminder.Sent,
+                            TodoListId = reminder.TodoListId
+                        }).ToList()
+                    })
+                    .FirstOrDefaultAsync(todoList => todoList.Id == givenId);
         }
 
         public async Task<IEnumerable<TodoList>> GetAllWithReminders()

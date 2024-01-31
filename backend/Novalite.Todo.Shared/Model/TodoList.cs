@@ -13,5 +13,7 @@ namespace NovaLite.Todo.Shared.Model
         public string Description { get; set; } = string.Empty;
 
         public List<TodoReminder> Reminders { get; set; } = new List<TodoReminder>();
+
+        public List<TodoAttachment> Attachments { get; set; } = new List<TodoAttachment>();
     }
 }

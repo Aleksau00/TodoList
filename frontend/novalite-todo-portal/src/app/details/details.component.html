@@ -3,6 +3,7 @@
 
   <div class="container">
     <div class="left">
+      <button  (click)="createReminder()" title="You will receive an email in 24 hours." mat-raised-button color="primary">Remind me <mat-icon>alarm_add</mat-icon></button>
       <form>
         <mat-form-field class="mat-form-field">
           <label style="color:#788bff" for="title">Title</label>
@@ -22,24 +23,35 @@
     </div>
     <div class="right">
       <div style="margin-top: 10px">
+
         <mat-form-field class="mat-form-field">
           <label style="color:#788bff" for="title">Add new item</label>
           <input matInput placeholder="Enter text"  [(ngModel)]="newContent" name="newContent" id="newContent">
         </mat-form-field>
-        <button class="minifab" color="primary" mat-mini-fab (click)="createItem()">Add</button>
+        <button class="minifab" style="background-color: #5465ff" mat-mini-fab (click)="createItem()">Add</button>
       </div>
       <div *ngFor="let item of todoListModel.todoItems">
         <mat-form-field class="mat-form-field">
           <input matInput placeholder="Enter text" [(ngModel)]="item.content" name="content" id="content">
         </mat-form-field>
-        <button class="minifab" mat-mini-fab (click)="editItem(item, todoListModel.todoList.id)">Edit</button>
+        <button class="minifab" style="background-color: cornflowerblue" mat-mini-fab (click)="editItem(item, todoListModel.todoList.id)">Edit</button>
       </div>
     </div>
 
+
   </div>
-  <div>
-    <button (click)="createReminder()" title="You will receive an email in 24 hours." mat-raised-button color="primary">Remind me <mat-icon>alarm_add</mat-icon></button>
+  <div class="file-wrapper" style="margin: 10px;">
+
+    <div class="file-upload-container">
+      <h2>Add attachments</h2>
+      <form (submit)="uploadFile()" enctype="multipart/form-data">
+        <input  type="file" id="fileInput" (change)="onFileSelected($event)" />
+        <button style="background-color: #5465ff; color: white;" mat-raised-button type="submit">Upload</button>
+      </form>
+    </div>
+    <button class="attachments-button" mat-raised-button (click)="listAttachments()" style="color: white; background-color: #5465ff;">Attachments <mat-icon style="font-size: 20px">attachment</mat-icon></button>
   </div>
+
 
 
 

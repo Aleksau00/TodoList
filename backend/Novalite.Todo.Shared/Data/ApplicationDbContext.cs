@@ -11,13 +11,15 @@ namespace NovaLite.Todo.Shared.Data
         public DbSet<TodoItem> TodoItems { get; set; }
         public DbSet<TodoList> TodoLists { get; set; }
         public DbSet<TodoReminder> TodoReminders { get; set; }
+        public DbSet<TodoAttachment> TodoAttachments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<TodoList>()
                 .HasMany(list => list.Reminders)
                 .WithOne(reminder => reminder.TodoList)
-                .HasForeignKey(reminder => reminder.TodoListId);
+                .HasForeignKey(reminder => reminder.TodoListId)
+                .HasForeignKey(attachment => attachment.TodoListId);
         }
     }
 }

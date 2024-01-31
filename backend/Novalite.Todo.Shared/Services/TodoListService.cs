@@ -31,7 +31,7 @@ namespace NovaLite.Todo.Shared.Services
         public async Task<TodoList> GetById(Guid id)
         {
             Console.WriteLine(id);
-            var todoList = await _unitOfWork.TodoListRepository.GetByIdAsync(id);
+            var todoList = await _unitOfWork.TodoListRepository.GetByIdWithRemindersAsync(id);
             Console.WriteLine(todoList);
             await _unitOfWork.CompleteAsync();
             return todoList;

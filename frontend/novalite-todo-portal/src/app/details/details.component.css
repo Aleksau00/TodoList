@@ -61,3 +61,47 @@
   margin-left: 30px;
 }
 
+/* upload-file.component.css */
+
+.file-upload-container {
+  text-align: center;
+  margin: 20px;
+}
+
+h2 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+input {
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.file-wrapper {
+  width: 1080px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.attachments-button {
+  margin-left: 100px;
+  height: 100px;
+  width: 150px;
+}
+

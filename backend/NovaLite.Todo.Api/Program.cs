@@ -4,6 +4,8 @@ using NovaLite.Todo.Shared.Data;
 using Novalite.Todo.Shared.Repos.TodoListRepo;
 using NovaLite.Todo.Shared.Repos.TodoListRepo;
 using NovaLite.Todo.Shared.Services;
+using Azure.Storage.Blobs;
+using Novalite.Todo.Shared.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,8 +23,10 @@ builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddScoped<ITodoListRepository, TodoListRepository>();
 builder.Services.AddScoped<ITodoListService, TodoListService>();
 builder.Services.AddScoped<ITodoItemRepository, TodoItemRepository>();
+builder.Services.AddScoped<ITodoAttachmentRepository, TodoAttachmentRepository>();
 builder.Services.AddScoped<ITodoItemService, TodoItemService>();
 builder.Services.AddScoped<ITodoReminderRepository, TodoReminderRepository>();
+builder.Services.AddScoped<BlobStorageService>();
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
 builder.Services.AddCors(options =>

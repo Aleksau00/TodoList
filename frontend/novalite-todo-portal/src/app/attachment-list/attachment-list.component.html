@@ -1,0 +1,17 @@
+<ng-container *ngIf="attachmentsData.length > 0; else noAttachments">
+  <div class="attachments-container">
+    <mat-card style="height: 60px; box-shadow: #788bff; outline-width: 1px;" *ngFor="let attachment of attachmentsData" class="attachment-card">
+      <mat-card-header style="display: flex; justify-content: space-between; align-items: center">
+        <mat-card-title style="font-size: 12px;">{{ attachment.fileName }}</mat-card-title>
+        <button (click)="downloadFile(attachment)" mat-raised-button style="color: white; background-color: #5465ff; height: 35px; width: 70px; font-size: 12px;">
+          Download
+        </button>
+      </mat-card-header>
+      <!-- Add more card content as needed -->
+    </mat-card>
+  </div>
+</ng-container>
+
+<ng-template #noAttachments>
+  <p>No attachments available.</p>
+</ng-template>

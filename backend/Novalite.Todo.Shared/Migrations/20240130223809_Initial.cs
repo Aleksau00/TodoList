@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Novalite.Todo.Shared.Migrations
 {
     /// <inheritdoc />
-    public partial class Reminders : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -22,6 +22,25 @@ namespace Novalite.Todo.Shared.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_TodoLists", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "TodoAttachments",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    FileName = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    TodoListId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TodoAttachments", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_TodoAttachments_TodoLists_TodoListId",
+                        column: x => x.TodoListId,
+                        principalTable: "TodoLists",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -65,6 +84,11 @@ namespace Novalite.Todo.Shared.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_TodoAttachments_TodoListId",
+                table: "TodoAttachments",
+                column: "TodoListId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_TodoItems_TodoListId",
                 table: "TodoItems",
                 column: "TodoListId");
@@ -78,6 +102,9 @@ namespace Novalite.Todo.Shared.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "TodoAttachments");
+
             migrationBuilder.DropTable(
                 name: "TodoItems");
 

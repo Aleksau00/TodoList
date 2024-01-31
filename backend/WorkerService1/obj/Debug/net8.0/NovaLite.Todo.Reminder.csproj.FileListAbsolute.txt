@@ -63,3 +63,8 @@ C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\WorkerService1\bin\D
 C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\WorkerService1\obj\Debug\net8.0\NovaLite.Todo.Reminder.csproj.CopyComplete
 C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\WorkerService1\obj\Debug\net8.0\NovaLite.Todo.Reminder.genruntimeconfig.cache
 C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\WorkerService1\obj\Debug\net8.0\ref\NovaLite.Todo.Reminder.dll
+C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\WorkerService1\bin\Debug\net8.0\Azure.Storage.Blobs.dll
+C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\WorkerService1\bin\Debug\net8.0\Azure.Storage.Common.dll
+C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\WorkerService1\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\WorkerService1\bin\Debug\net8.0\System.IO.Hashing.dll
+C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\WorkerService1\bin\Debug\net8.0\Microsoft.WindowsAzure.Storage.dll

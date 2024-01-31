@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NovaLite.Todo.Reminder")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+652986a6848228af674a3690b724bf161ca441ac")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+184c609fd425066bd8074a5cc7dab0eec8ecb5db")]
 [assembly: System.Reflection.AssemblyProductAttribute("NovaLite.Todo.Reminder")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NovaLite.Todo.Reminder")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
