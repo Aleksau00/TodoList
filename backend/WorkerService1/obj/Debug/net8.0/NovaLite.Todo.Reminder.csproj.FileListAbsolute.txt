@@ -68,3 +68,16 @@ C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\WorkerService1\bin\D
 C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\WorkerService1\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\WorkerService1\bin\Debug\net8.0\System.IO.Hashing.dll
 C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\WorkerService1\bin\Debug\net8.0\Microsoft.WindowsAzure.Storage.dll
+C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\WorkerService1\bin\Debug\net8.0\Azure.Security.KeyVault.Certificates.dll
+C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\WorkerService1\bin\Debug\net8.0\Azure.Security.KeyVault.Secrets.dll
+C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\WorkerService1\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\WorkerService1\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\WorkerService1\bin\Debug\net8.0\Microsoft.Identity.Abstractions.dll
+C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\WorkerService1\bin\Debug\net8.0\Microsoft.Identity.Web.dll
+C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\WorkerService1\bin\Debug\net8.0\Microsoft.Identity.Web.Certificate.dll
+C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\WorkerService1\bin\Debug\net8.0\Microsoft.Identity.Web.Certificateless.dll
+C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\WorkerService1\bin\Debug\net8.0\Microsoft.Identity.Web.Diagnostics.dll
+C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\WorkerService1\bin\Debug\net8.0\Microsoft.Identity.Web.TokenAcquisition.dll
+C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\WorkerService1\bin\Debug\net8.0\Microsoft.Identity.Web.TokenCache.dll
+C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\WorkerService1\bin\Debug\net8.0\Microsoft.IdentityModel.LoggingExtensions.dll
+C:\Users\Aleksa\Desktop\internship-aleksa-ignjatvic\backend\WorkerService1\bin\Debug\net8.0\Microsoft.IdentityModel.Validators.dll

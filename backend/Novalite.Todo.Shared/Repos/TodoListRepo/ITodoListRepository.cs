@@ -5,8 +5,8 @@ namespace NovaLite.Todo.Shared.Repos.TodoListRepo
 {
     public interface ITodoListRepository : IGenericRepository<TodoList>
     {
-
         Task<TodoList> GetByIdWithRemindersAsync(Guid givenId);
         Task<IEnumerable<TodoList>> GetAllWithReminders();
+        Task<IEnumerable<TodoList>> GetAllWithRemindersFromUser(Guid givenId);
     }
 }

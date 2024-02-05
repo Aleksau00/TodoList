@@ -11,6 +11,7 @@ namespace NovaLite.Todo.Shared.Data
         ITodoItemRepository TodoItemRepository { get; }
         ITodoReminderRepository TodoReminderRepository { get; }
         ITodoAttachmentRepository TodoAttachmentRepository { get; }
+        ITodoUserRepository TodoUserRepository { get; }
         T GetRepository<T>() where T : class;
         Task CompleteAsync();
     }

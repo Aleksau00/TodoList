@@ -70,6 +70,10 @@
               "target": "Package",
               "version": "[8.0.0, )"
             },
+            "Microsoft.Identity.Web": {
+              "target": "Package",
+              "version": "[2.16.1, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"
@@ -154,6 +158,10 @@
             "Microsoft.Extensions.Hosting": {
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "Microsoft.Identity.Web": {
+              "target": "Package",
+              "version": "[2.16.1, )"
             }
           },
           "imports": [

@@ -11,6 +11,8 @@ namespace NovaLite.Todo.Shared.Model
 
         [StringLength(255, ErrorMessage = "Description cannot exceed 255 characters.")]
         public string Description { get; set; } = string.Empty;
+        public TodoUser User { get; set; }
+        public Guid UserId { get; set; }
 
         public List<TodoReminder> Reminders { get; set; } = new List<TodoReminder>();
 

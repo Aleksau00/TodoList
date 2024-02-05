@@ -12,6 +12,7 @@ namespace NovaLite.Todo.Shared.Data
         public DbSet<TodoList> TodoLists { get; set; }
         public DbSet<TodoReminder> TodoReminders { get; set; }
         public DbSet<TodoAttachment> TodoAttachments { get; set; }
+        public DbSet<TodoUser> TodoUsers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

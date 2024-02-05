@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="cards">
+    <mat-card class="example-card" *ngFor="let user of users">
+      <mat-card-header>
+        <div *ngIf="user.role === 0">
+          <mat-card-title>User</mat-card-title>
+        </div>
+        <div *ngIf="user.role === 1">
+          <mat-card-title>Manager</mat-card-title>
+        </div>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{user.email}}</p>
+      </mat-card-content>
+      <mat-card-actions class="card-actions">
+        <div class="button-container">
+          <button mat-raised-button *ngIf="user.role == 0" style="color: white; background-color: #5465ff" mat-button (click)="makeManager(user)" class="details-button">Make manager</button>
+          <button mat-raised-button *ngIf="user.role == 1" style="color: white; background-color: #5465ff" mat-button (click)="makeUser(user)" class="details-button">Make user</button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+

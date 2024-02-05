@@ -1,2 +1,14 @@
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
+<mat-toolbar color="primary">
+  <a class="title" href="/">{{ title }}</a>
+  <div class="toolbar-spacer"></div>
+  <a *ngIf="getRole() == 'User'" mat-button [routerLink]="['lists']">Lists</a>
+  <a *ngIf="getRole() == 'User'" mat-button [routerLink]="['lists/new']">New list</a>
+  <a *ngIf="getRole() == 'Admin'" mat-button [routerLink]="['admin']">Admin page</a>
+  <a *ngIf="getRole() == 'Manager'" mat-button [routerLink]="['manager']">Manager page</a>
+  <button (click)="loginRedirect()" mat-raised-button  *ngIf="!loginDisplay">Login</button>
+  <button mat-raised-button (click)="logout()" *ngIf="loginDisplay">Logout</button>
+</mat-toolbar>
+<div class="container">
+  <!--This is to avoid reload during acquireTokenSilent() because of hidden iframe -->
+  <router-outlet *ngIf="!isIframe"></router-outlet>
+</div>

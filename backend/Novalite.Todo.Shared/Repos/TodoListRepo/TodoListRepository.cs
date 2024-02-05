@@ -21,6 +21,7 @@ namespace NovaLite.Todo.Shared.Repos.TodoListRepo
                         Id = todoList.Id,
                         Title = todoList.Title,
                         Description = todoList.Description,
+                        UserId = todoList.UserId,
                         Reminders = todoList.Reminders.Select(reminder => new TodoReminder
                         {
                             Id = reminder.Id,
@@ -50,6 +51,29 @@ namespace NovaLite.Todo.Shared.Repos.TodoListRepo
                         // Exclude TodoList property
                     }).ToList()
                 })
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<TodoList>> GetAllWithRemindersFromUser(Guid givenId)
+        {
+            return await DbSet
+                .Include(todoList => todoList.Reminders)
+                .Select(todoList => new TodoList
+                {
+                    Id = todoList.Id,
+                    Title = todoList.Title,
+                    Description = todoList.Description,
+                    UserId = todoList.UserId,
+                    Reminders = todoList.Reminders.Select(reminder => new TodoReminder
+                    {
+                        Id = reminder.Id,
+                        Timestamp = reminder.Timestamp,
+                        Sent = reminder.Sent,
+                        TodoListId = reminder.TodoListId
+                        // Exclude TodoList property
+                    }).ToList()
+                })
+                .Where(list => list.UserId == givenId)
                 .ToListAsync();
         }
     }

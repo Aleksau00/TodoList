@@ -12,8 +12,11 @@ namespace NovaLite.Todo.Shared.Data
         private TodoItemRepository _todoItemRepository;
         private TodoReminderRepository _todoReminderRepository;
         private TodoAttachmentRepository _todoAttachmentRepository;
+        private TodoUserRepository _todoUserRepository;
         private bool _disposed;
 
+        public ITodoUserRepository TodoUserRepository => _todoUserRepository ??= new
+            TodoUserRepository(_context);
         public ITodoAttachmentRepository TodoAttachmentRepository => _todoAttachmentRepository ??= new 
             TodoAttachmentRepository(_context);
         public ITodoReminderRepository TodoReminderRepository => _todoReminderRepository ??= new

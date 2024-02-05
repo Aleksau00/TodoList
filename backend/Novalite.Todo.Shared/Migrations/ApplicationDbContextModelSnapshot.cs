@@ -82,7 +82,12 @@ namespace Novalite.Todo.Shared.Migrations
                         .HasMaxLength(2147483647)
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("TodoLists");
                 });
@@ -109,6 +114,24 @@ namespace Novalite.Todo.Shared.Migrations
                     b.ToTable("TodoReminders");
                 });
 
+            modelBuilder.Entity("Novalite.Todo.Shared.Model.TodoUser", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Role")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TodoUsers");
+                });
+
             modelBuilder.Entity("NovaLite.Todo.Shared.Model.TodoAttachment", b =>
                 {
                     b.HasOne("NovaLite.Todo.Shared.Model.TodoList", "TodoList")
@@ -131,6 +154,17 @@ namespace Novalite.Todo.Shared.Migrations
                     b.Navigation("TodoList");
                 });
 
+            modelBuilder.Entity("NovaLite.Todo.Shared.Model.TodoList", b =>
+                {
+                    b.HasOne("Novalite.Todo.Shared.Model.TodoUser", "User")
+                        .WithMany("lists")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Novalite.Todo.Shared.Model.TodoReminder", b =>
                 {
                     b.HasOne("NovaLite.Todo.Shared.Model.TodoList", "TodoList")
@@ -147,6 +181,11 @@ namespace Novalite.Todo.Shared.Migrations
                     b.Navigation("Attachments");
 
                     b.Navigation("Reminders");
+                });
+
+            modelBuilder.Entity("Novalite.Todo.Shared.Model.TodoUser", b =>
+                {
+                    b.Navigation("lists");
                 });
 #pragma warning restore 612, 618
         }

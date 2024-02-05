@@ -38,7 +38,7 @@ namespace NovaLite.Todo.Reminder
         private async Task PullReminders(ApplicationDbContext context)
         {
             var reminders = context.TodoReminders
-                .Where(r => !r.Sent)
+                .Where(r => !r.Sent && r.Timestamp.AddDays(1) > DateTimeOffset.UtcNow)
                 .ToList();
 
             foreach (var reminder in reminders)
